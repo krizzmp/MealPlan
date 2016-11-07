@@ -1,40 +1,70 @@
 import java.util.*
 val shops = Shops(
         Shop(
-                IngredientItem(Ingredient.BACON, 200.00, Price(10.00)),
-                IngredientItem(Ingredient.SPAGHETTI, 1000.00, Price(10.00)),
-                IngredientItem(Ingredient.CHEESE, 250.00, Price(14.00)),
-                IngredientItem(Ingredient.TOMATOES, 10.00, Price(16.00)),
-                IngredientItem(Ingredient.ONION, 7.00, Price(10.00)),
-                IngredientItem(Ingredient.GARLIC, 7.00, Price(10.00)),
-                IngredientItem(Ingredient.PORRE, 3.00, Price(15.00)),
-                IngredientItem(Ingredient.CARROT, 10.00, Price(13.00)),
-                IngredientItem(Ingredient.BROCCOLI, 300.00, Price(14.00)),
-                IngredientItem(Ingredient.HVIDE_BØNNER, 200.00, Price(12.00))
+                IngredientItem(Ingredient.BACON, 200.0, Price(10.00)),
+                IngredientItem(Ingredient.SPAGHETTI, 1000.0, Price(10.00)),
+                IngredientItem(Ingredient.OST, 250.0, Price(14.00)),
+                IngredientItem(Ingredient.TOMATER, 10.0, Price(16.00)),
+                IngredientItem(Ingredient.LØG, 7.0, Price(10.00)),
+                IngredientItem(Ingredient.HVIDLØG, 7.0, Price(10.00)),
+                IngredientItem(Ingredient.PORRE, 3.0, Price(15.00)),
+                IngredientItem(Ingredient.GULEROD, 10.0, Price(13.00)),
+                IngredientItem(Ingredient.BROCCOLI, 300.0, Price(14.00)),
+                IngredientItem(Ingredient.HVIDE_BØNNER, 200.0, Price(12.00)),
+                IngredientItem(Ingredient.PARMESAN, 300.0,Price(34.00)),
+                IngredientItem(Ingredient.PERSILLE, 100.0,Price(24.00)),
+                IngredientItem(Ingredient.RØGET_SKINKE_TERNINGER, 200.0,Price(10.00)),
+                IngredientItem(Ingredient.RODSELLERI_TERNINGER, 150.0,Price(16.00)),
+                IngredientItem(Ingredient.HVIDKÅL, 500.0,Price(20.00)),
+                IngredientItem(Ingredient.KARTOFLER, 1000.0,Price(12.00)),
+                IngredientItem(Ingredient.SMØR, 500.0,Price(9.00)),
+                IngredientItem(Ingredient.URTEBULLION, 7.0,Price(11.00)),
+                IngredientItem(Ingredient.TOMATPURRE, 70.0,Price(10.00)),
+                IngredientItem(Ingredient.ÆRTER, 500.0,Price(16.00)),
+                IngredientItem(Ingredient.PASTASNEGLE, 500.0,Price(16.00)),
+                IngredientItem(Ingredient.HAKKEDE_TOMATER, 200.0,Price(13.00)),
+                IngredientItem(Ingredient.BLADSELLERI, 100.0,Price(16.00))
+
         )
 )
+
 fun main(args: Array<String>) {
 
-    val recipes = listOf<Recipe>(
-            Recipe("spagetti w/ bacon",
-                    IngredientAmount(Ingredient.BACON, 200.0),
-                    IngredientAmount(Ingredient.SPAGHETTI, 100.0),
-                    IngredientAmount(Ingredient.CHEESE, 125.0)
-            ),
+    val recipes = listOf(
             Recipe("Tomatsupe med pasta",
-                    IngredientAmount(Ingredient.TOMATOES, 6.0),
-                    IngredientAmount(Ingredient.ONION, 1.0),
-                    IngredientAmount(Ingredient.GARLIC, 1.0),
+                    IngredientAmount(Ingredient.TOMATER, 6.0),
+                    IngredientAmount(Ingredient.LØG, 1.0),
+                    IngredientAmount(Ingredient.HVIDLØG, 1.0),
                     IngredientAmount(Ingredient.SPAGHETTI, 100.0),
-                    IngredientAmount(Ingredient.PORRE, 1.0)
+                    IngredientAmount(Ingredient.PORRE, 1.0),
+                    IngredientAmount(Ingredient.PARMESAN, 50.0),
+                    IngredientAmount(Ingredient.PERSILLE, 15.0)
             ),
             Recipe("Urte-børnesuppe med pasta",
-                    IngredientAmount(Ingredient.CARROT, 2.0),
-                    IngredientAmount(Ingredient.ONION, 1.0),
-                    IngredientAmount(Ingredient.GARLIC, 1.0),
+                    IngredientAmount(Ingredient.LØG, 1.0),
+                    IngredientAmount(Ingredient.HVIDLØG, 1.0),
+                    IngredientAmount(Ingredient.GULEROD, 2.0),
+                    IngredientAmount(Ingredient.BLADSELLERI, 10.0),
+                    IngredientAmount(Ingredient.URTEBULLION, 1.0),
                     IngredientAmount(Ingredient.SPAGHETTI, 150.0),
                     IngredientAmount(Ingredient.BROCCOLI, 150.0),
-                    IngredientAmount(Ingredient.HVIDE_BØNNER, 100.0)
+                    IngredientAmount(Ingredient.HVIDE_BØNNER, 100.0),
+                    IngredientAmount(Ingredient.PARMESAN, 50.0)
+            ),
+            Recipe("Minestrone",
+                    IngredientAmount(Ingredient.RØGET_SKINKE_TERNINGER, 100.0),
+                    IngredientAmount(Ingredient.LØG, 1.0),
+                    IngredientAmount(Ingredient.RODSELLERI_TERNINGER, 25.0),
+                    IngredientAmount(Ingredient.GULEROD, 1.0),
+                    IngredientAmount(Ingredient.HVIDKÅL, 150.0),
+                    IngredientAmount(Ingredient.KARTOFLER, 100.0),
+                    IngredientAmount(Ingredient.SMØR, 25.0),
+                    IngredientAmount(Ingredient.URTEBULLION, 1.0),
+                    IngredientAmount(Ingredient.TOMATPURRE, 70.0),
+                    IngredientAmount(Ingredient.HVIDLØG, 2.0),
+                    IngredientAmount(Ingredient.ÆRTER, 250.0),
+                    IngredientAmount(Ingredient.TOMATER, 2.0),
+                    IngredientAmount(Ingredient.PASTASNEGLE, 70.0)
             )
     )
     val mealPlan = app(shops, recipes)
@@ -47,7 +77,7 @@ fun app(shops: Shops, recipes: List<Recipe>): List<Recipe> {
     val pq = PriorityQueue<Tree>(recipes.map { Leaf(it, shops) })
     while (true) {
         val g = pq.poll()
-        if (g.recipes().count() < 2) {
+        if (g.recipes().count() < 3) {
             val j = expand(g, recipes.subtract(g.recipes()).toList(), shops)
             pq.addAll(j)
         } else {
@@ -62,28 +92,8 @@ fun expand(g: Tree, recipes: List<Recipe>, shops: Shops): Collection<Tree> = rec
 fun List<Recipe>.price(shops: Shops): Price = this.flatMap { it.ingredients.asList() }.price(shops)
 
 @JvmName("ListIngredientPrice")
-fun List<IngredientAmount>.price(shops: Shops): Price = this.groupBy { it.ingredient }.map { IngredientAmount(it.key,it.value.sumByDouble { x->x.amount }) }.map { shops.price(it) }.sum()
+fun List<IngredientAmount>.price(shops: Shops): Price = this.groupBy { it.ingredient }.map { IngredientAmount(it.key, it.value.sumByDouble { x -> x.amount }) }.map { shops.price(it) }.sum()
 
-data class IngredientAmount(val ingredient: Ingredient, val amount: Double)
-
-enum class Ingredient {
-    BACON,
-    SPAGHETTI,
-    CHEESE,
-    TOMATOES,
-    ONION,
-    GARLIC,
-    PORRE,
-    CARROT,
-    BROCCOLI,
-    HVIDE_BØNNER
-}
-
-interface Summable<A> {
-    infix operator fun plus(other: A): A
-}
-
-private fun <T : Summable<T>> Iterable<T>.sum(): T = this.reduce { sum, el -> sum + el }
 
 class Price(val price: Double) : Comparable<Price>, Summable<Price> {
     override fun compareTo(other: Price): Int {
@@ -128,20 +138,29 @@ class Shop(vararg val items: IngredientItem) {
 }
 
 data class IngredientItem(val ingredient: Ingredient, val amount: Double, val price: Price)
-
-class Leaf(val recipe: Recipe, shops: Shops) : Tree(shops) {
-    override fun recipes(): List<Recipe> = listOf(recipe)
-}
-
-abstract class Tree(val shops: Shops) : Comparable<Tree> {
-    abstract fun recipes(): List<Recipe>
-    override fun compareTo(other: Tree): Int {
-        return (this.price()).compareTo(other.price())
-    }
-
-    fun price() = this.recipes().price(shops)
-}
-
-open class Node(val recipe: Recipe, val child: Tree, shops: Shops) : Tree(shops) {
-    override fun recipes(): List<Recipe> = child.recipes().plus(recipe)
+data class IngredientAmount(val ingredient: Ingredient, val amount: Double)
+enum class Ingredient {
+    BACON,
+    SPAGHETTI,
+    OST,
+    TOMATER,
+    LØG,
+    HVIDLØG,
+    PORRE,
+    GULEROD,
+    BROCCOLI,
+    HVIDE_BØNNER,
+    PARMESAN,
+    PERSILLE,
+    RØGET_SKINKE_TERNINGER,
+    RODSELLERI_TERNINGER,
+    HVIDKÅL,
+    KARTOFLER,
+    SMØR,
+    URTEBULLION,
+    TOMATPURRE,
+    ÆRTER,
+    PASTASNEGLE,
+    HAKKEDE_TOMATER,
+    BLADSELLERI
 }
